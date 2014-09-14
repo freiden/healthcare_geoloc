@@ -38,6 +38,6 @@ professionalsList = ->
       marker.openPopup()
 
 
-$ ->
+$(document).on "page:change", ->
   initMap()
   professionalsList()
