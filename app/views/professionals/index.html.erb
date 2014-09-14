@@ -1,0 +1,35 @@
+<h1>Listing professionals</h1>
+
+<div id="professionals-map">
+</div>
+
+<table id="professionals">
+  <thead>
+    <tr>
+      <th colspan="3">Name</th>
+      <th colspan="3">Specialty</th>
+      <th colspan="6">Address</th>
+      <th colspan="6">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @professionals.each do |professional| %>
+      <tr>
+        <td colspan="3" class="name"><%= formatted_name(professional) %></td>
+        <td colspan="3" class="specialty"><%= professional.specialty.humanize %></td>
+        <td colspan="6" class="address"><%= professional.full_address %></td>
+        <td colspan="6" class="actions">
+          <%= link_to 'Display on the map', "#", { class: "locator", data: { lat: professional.latitude, long: professional.longitude } } %> /
+          <%= link_to 'Show', professional %> /
+          <%= link_to 'Edit', edit_professional_path(professional) %> /
+          <%= link_to 'Destroy', professional, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Professional', new_professional_path %>

@@ -14,13 +14,18 @@
 ActiveRecord::Schema.define(version: 20140913200239) do
 
   create_table "professionals", force: true do |t|
-    t.string "name",                         null: false
-    t.string "address"
-    t.string "zip_code"
-    t.string "city"
-    t.string "country",   default: "France", null: false
-    t.float  "latitude"
-    t.float  "longitude"
+    t.string   "civility",                      null: false
+    t.string   "first_name",                    null: false
+    t.string   "last_name",                     null: false
+    t.string   "specialty",                     null: false
+    t.string   "address",                       null: false
+    t.string   "zip_code",                      null: false
+    t.string   "city",                          null: false
+    t.string   "country",    default: "France", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end

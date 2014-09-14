@@ -43,8 +43,9 @@ gem 'geocoder'
 group :development do
   gem 'pry'
   gem 'pry-rails'
+  gem 'awesome_print'
 end
 
-group :test do
-  gem 'rspec-rails'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
 end

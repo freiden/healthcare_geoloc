@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="professional">
+  <p>
+    Civility: <%= @professional.civility.humanize %>
+    <br />
+    First Name: <%= @professional.first_name.humanize %>
+    <br />
+    Last Name: <%= @professional.last_name.humanize %>
+    <br />
+  </p>
+  <p>Specialty: <%= @professional.specialty.humanize %></p>
+  <p>
+    Address: <%= @professional.address %>
+    <br />
+    Zip Code: <%= @professional.zip_code %>
+    <br />
+    City: <%= @professional.city.humanize %>
+    <br />
+    Country: <%= @professional.country.humanize %>
+  </p>
+</div>
+
+<%= link_to 'Edit', edit_professional_path(@professional) %> |
+<%= link_to 'Back', professionals_path %>
